@@ -68,3 +68,9 @@ INFO:    Build complete: nasa-panoply.sif
 # it is necessary to bind the XAUTHORITY into the container
 apptainer run -B $XAUTHORITY nasa-panoply.sif
 ```
+
+## Development information
+
+using apptainer 1.3.6 on Arch based BlendOS, with podman 5.3.1
+
+The image size is still too large, but since there are numerous dependencies in X11 and I do not know enough to test, what could be left out.
