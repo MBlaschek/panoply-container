@@ -13,4 +13,5 @@ WORKDIR /app
 # Download the tgz and extract
 RUN curl -s -L -o /app/panoply.tgz https://www.giss.nasa.gov/tools/panoply/download/PanoplyJ-5.5.5.tgz && tar --strip-components=1 --no-same-owner -xvzf panoply.tgz && rm /app/panoply.tgz
 # Entrypoint
-CMD sh /app/panoply.sh
+ENTRYPOINT ["sh", "/app/panoply.sh"]
+CMD [""]

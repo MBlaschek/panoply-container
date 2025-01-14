@@ -17,11 +17,11 @@ podman build -t nasa-panoply:5.5.5 -f Dockerfile .
 # create local directories if needed.
 mkdir -p $HOME/.local/bin $HOME/.local/share/icons $HOME/.local/share/applications
 # copy runscript
-cp panoply-container/panoply-logo-small.png $HOME/.local/share/icons/
-cp panoply-container/panoply_podman.sh $HOME/.local/bin/
-# replace HOMEDIRECTORY with the actual home directory in the desktop file
-sed "s|HOMEDIRECTORY|$HOME|" panoply-container/Panoply.desktop > $HOME/.local/share/applications/Panoply.desktop
+cp panoply-logo-small.png $HOME/.local/share/icons/
+cp panoply_podman.sh $HOME/.local/bin/
 chmod +x $HOME/.local/bin/panoply_podman.sh
+# replace HOMEDIRECTORY with the actual home directory in the desktop file
+sed "s|HOMEDIRECTORY|$HOME|" Panoply.desktop > $HOME/.local/share/applications/Panoply.desktop
 
 # update the desktop files
 update-desktop-database $HOME/.local/share/applications/
