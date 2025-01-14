@@ -19,7 +19,10 @@ mkdir -p $HOME/.local/bin $HOME/.local/share/icons $HOME/.local/share/applicatio
 # copy runscript
 cp panoply-container/panoply-logo-small.png $HOME/.local/share/icons/
 cp panoply-container/panoply_podman.sh $HOME/.local/bin/
+# replace HOMEDIRECTORY with the actual home directory in the desktop file
+sed "s|HOMEDIRECTORY|$HOME|" panoply-container/Panoply.desktop > $HOME/.local/share/applications/Panoply.desktop
 chmod +x $HOME/.local/bin/panoply_podman.sh
+
 # update the desktop files
 update-desktop-database $HOME/.local/share/applications/
 # now there should be an association with NetCDF files

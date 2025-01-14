@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Panoply
-Exec=$HOME/.local/bin/panoply_podman.sh
-Icon=$HOME/.local/share/icons/panoply-logo-small.png
+Exec=HOMEDIRECTORY/.local/bin/panoply_podman.sh
+Icon=HOMEDIRECTORY/.local/share/icons/panoply-logo-small.png
 Type=Application
 Terminal=false
 Categories=Office;
