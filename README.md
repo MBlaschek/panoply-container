@@ -10,10 +10,12 @@ git clone https://github.com/MBlaschek/panoply-container.git
 
 # build the container
 cd panoply-container
-podman build -t nasa-panoply:5.5.5 -f Dockerfile .
+# get the current version from NASA
+VERSION=$(curl -s https://www.giss.nasa.gov/tools/panoply/download/ | grep -Eo 'PanoplyJ-.*.zip' | grep -Eo '[0-9]+\.[0-9]+\.[0-9]+')
+echo $VERSION
+podman build -t nasa-panoply:latest --build-arg VERSION=$VERSION -f Dockerfile .
 
 # install helpers
-
 # create local directories if needed.
 mkdir -p $HOME/.local/bin $HOME/.local/share/icons $HOME/.local/share/applications
 # copy runscript
