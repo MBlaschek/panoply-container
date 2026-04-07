@@ -2,7 +2,8 @@
 # NASA Panoply 5.5.5 or later
 # available: https://www.giss.nasa.gov/tools/panoply/
 #
-FROM docker.io/library/openjdk:11-slim-bullseye
+#FROM docker.io/library/openjdk:11-slim-bullseye
+FROM docker.io/library/openjdk:27-ea-11-slim
 MAINTAINER Michael Blaschek, michael.blaschek@univie.ac.at
 # install xserver extensions and some other dependencies
 ARG VERSION=5.7.1
