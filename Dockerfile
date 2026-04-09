@@ -6,9 +6,9 @@
 FROM docker.io/library/openjdk:27-ea-11-slim
 MAINTAINER Michael Blaschek, michael.blaschek@univie.ac.at
 # install xserver extensions and some other dependencies
-ARG VERSION=5.7.1
+ARG VERSION=5.9.2
 # override version at build time: --build-arg VERSION=5.6.2
-ENV VERSION=${VERSION:-5.7.1}
+ENV VERSION=${VERSION:-5.9.2}
 ENV DEBIAN_FRONTEND='noninteractive'
 RUN apt update && apt install -y x11-xserver-utils libxtst6 curl libfreetype6 fontconfig unzip && apt clean -y && rm -rf /var/lib/apt/lists/*
 # RUN apt update && apt-get install -y x11vnc xvfb curl && apt clean -y && rm -rf /var/lib/apt/lists/*
